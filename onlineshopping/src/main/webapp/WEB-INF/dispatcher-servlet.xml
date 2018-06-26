@@ -26,7 +26,7 @@
    <!-- Loading static Resources -->
    
    <mvc:annotation-driven/>
-   <mvc:resources location="resources" mapping="/resources/**"/>
+     <mvc:resources location="/resources/**" mapping="/resources/**"/>
    
    
    
