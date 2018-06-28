@@ -12,6 +12,7 @@
    ">
    
    <context:component-scan base-package="com.rahul.onlineshopping.controller"/>
+   <context:component-scan base-package="com.rahul.shoppingbackend.daoimpl"/>
    
    
    <bean id="viewResolver"

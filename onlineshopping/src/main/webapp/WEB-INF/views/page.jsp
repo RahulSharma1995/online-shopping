@@ -23,7 +23,7 @@
 
     <title>Online Shopping- ${title} </title>
     <script type="text/javascript">
-     window.menu = '${title}';
+     window.menu ="${title}";
     </script>
     
 	<script type="text/javascript">
@@ -81,6 +81,17 @@
    	 <%@include file="contact.jsp" %>
     
       </c:if>
+      
+       
+      
+      <!-- When we click on Contact Us -->
+       <c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+    
+   	<%@include file="listProducts.jsp" %>
+    
+      </c:if>  
+      
+      
       </div>
     <!-- /.container -->
 
