@@ -1,16 +1,30 @@
 package com.rahul.shoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
 	
 	/*
 	 * Private Fields 
 	 */
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String name;
-	private String discription;
+	
+	private String description;
+	
+	@Column(name="image_url")
 	private String imageUrl;
+	
+	@Column(name="is_active")
 	private boolean active=true;
 	
 	
@@ -26,11 +40,11 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDiscription() {
-		return discription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	public void setDescription(String discription) {
+		this.description = discription;
 	}
 	public String getImageUrl() {
 		return imageUrl;
@@ -44,6 +58,13 @@ public class Category {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", discription=" + description + ", imageUrl=" + imageUrl
+				+ ", active=" + active + "]";
+	}
+	
+	
 	
 
 }
