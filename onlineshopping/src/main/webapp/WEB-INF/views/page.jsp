@@ -30,7 +30,7 @@
 <!--  <link href="${css}/bootstrap.min.css" rel="stylesheet">
 <link href="${css}/bootstrap.css" rel="stylesheet">
 -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <!-- Bootstrap Readable Theme -->
 <link href="${css}/bootstrap-simplex.css" rel="stylesheet">
 
@@ -79,17 +79,24 @@
 
 
 
-			<!-- When we click on Contact Us -->
+			<!-- When we click on All Products -->
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 
 				<%@include file="listProducts.jsp"%>
 
 			</c:if>
 			
-			<!-- When we click on Contact Us -->
+			<!-- When we click on Product -->
 			<c:if test="${userClickShowProduct == true }">
 
 				<%@include file="singleProduct.jsp"%>
+
+			</c:if>
+			
+			<!-- When we click on Manage Products -->
+			<c:if test="${userClickManageProducts == true }">
+
+				<%@include file="manageProducts.jsp"%>
 
 			</c:if>
 
@@ -106,6 +113,9 @@
 
 		<!-- Jquery -->
 		<script src="${js}/jquery.min.js"></script>
+		
+		<!-- Jquery -->
+		<script src="${js}/jquery.validate.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
@@ -115,6 +125,9 @@
 		
 		<!-- Data Table Bootstrap Script-->
 		<script src="${js}/dataTables.bootstrap.js"></script>
+		
+		<!-- BootBox -->
+		<script src="${js}/bootbox.min.js"></script>
 		
 		
 		<!-- Self coded javascript -->

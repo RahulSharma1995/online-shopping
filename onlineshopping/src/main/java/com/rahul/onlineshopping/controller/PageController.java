@@ -41,7 +41,7 @@ public class PageController {
 		return mv;
 	}
 	
-	@RequestMapping(value= "about")
+	@RequestMapping(value= "/about")
 	public ModelAndView about()
 	{
 		ModelAndView mv=new ModelAndView("page");
@@ -51,7 +51,7 @@ public class PageController {
 		return mv;
 	}
 	
-	@RequestMapping(value= "contact")
+	@RequestMapping(value= "/contact")
 	public ModelAndView contact()
 	{
 		ModelAndView mv=new ModelAndView("page");
@@ -110,6 +110,19 @@ public class PageController {
 		mv.addObject("title",product.getName());
 		mv.addObject("product", product);
 		mv.addObject("userClickShowProduct", true);
+		
+		return mv;
+	}
+	
+	/*
+	 * 
+	 * */
+	@RequestMapping(value= "/register")
+	public ModelAndView register()
+	{
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title", "About Us");
+		mv.addObject("userClickAbout", true);
 		
 		return mv;
 	}
