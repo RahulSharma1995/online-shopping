@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -16,6 +15,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Online Shopping Website Using Spring MVC and Hibernate">
+<meta name="author" content="Rahul Sharma">
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
 
 
 <title>Online Shopping - ${title}</title>
@@ -97,6 +100,13 @@
 			<c:if test="${userClickManageProducts == true }">
 
 				<%@include file="manageProducts.jsp"%>
+
+			</c:if>
+			
+			<!-- When we click on Manage Products -->
+			<c:if test="${userClickShowCart == true }">
+
+				<%@include file="cart.jsp"%>
 
 			</c:if>
 

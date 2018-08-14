@@ -3,7 +3,8 @@ package com.rahul.onlineshopping.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
-//import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.rahul.onlineshopping.model.RegisterModel;
@@ -14,8 +15,8 @@ import com.rahul.shoppingbackend.dto.User;
 @Component
 public class RegisterHandler {
 	
-	// @Autowired
-	// private PasswordEncoder passwordEncoder;
+	 @Autowired
+	 private BCryptPasswordEncoder passwordEncoder;
 		
 		
 	 @Autowired
@@ -56,7 +57,7 @@ public class RegisterHandler {
 	  }
 	   
 	  // encode the password
-	//  user.setPassword(passwordEncoder.encode(user.getPassword()));
+	  user.setPassword(passwordEncoder.encode(user.getPassword()));
 	  
 	  // save the user
 	  userDAO.add(user);

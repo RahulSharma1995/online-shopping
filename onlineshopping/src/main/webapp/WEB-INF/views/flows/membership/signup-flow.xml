@@ -14,7 +14,7 @@
 	
 	<!-- view the signup-personal page -->
 	
-	<view-state id="personal" view="flows/register/signup-personal" model="user">
+	<view-state id="personal" view="flows/membership/signup-personal" model="user">
 		<transition on="billing" to="validate" />
 		<on-exit>
 			<evaluate expression="registerHandler.addUser(flowScope.registerModel, user)" />			
@@ -30,7 +30,7 @@
 	</action-state>
 	
 	<!-- view the signup-billing page-->
-	<view-state id="billing" view="flows/register/signup-billing" model="billing">		
+	<view-state id="billing" view="flows/membership/signup-billing" model="billing">		
 		<transition on="confirm" to="confirm" />
 		<transition on="personal" to="personal" />	
 		<on-exit>
@@ -39,7 +39,7 @@
 	</view-state>
 	
 	<!-- view the signup-confirm page -->	
-	<view-state id="confirm" view="flows/register/signup-confirm" model="flowScope.registerModel">		
+	<view-state id="confirm" view="flows/membership/signup-confirm" model="flowScope.registerModel">		
 		<transition on="submit" to="submit" />
 		<transition on="billing" to="billing" />
 		<transition on="personal" to="personal" />	
@@ -53,7 +53,7 @@
 	
 	<!-- end state -->
 	<end-state id="home" view="externalRedirect:contextRelative:/"/>
-	<end-state id="success" view="flows/register/signup-success"/>
+	<end-state id="success" view="flows/membership/signup-success"/>
 	<!-- global-transition -->
 	<global-transitions>
 		<transition on ="home" to="home"/>

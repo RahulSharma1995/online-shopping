@@ -25,7 +25,7 @@ public class HibernateConfig {
 	private final static String DATABASE_PASSWORD="";
 	
 	// DataSource Bean is available 
-	@Bean
+	@Bean("dataSource")
 	public DataSource getDataSource() {
 		
 		BasicDataSource dataSource=new BasicDataSource();
@@ -65,7 +65,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 		
-		properties.put("hibernate.hbm2ddl.auto", "create");
+		//properties.put("hibernate.hbm2ddl.auto", "create");
 		
 		return properties;
 	}
